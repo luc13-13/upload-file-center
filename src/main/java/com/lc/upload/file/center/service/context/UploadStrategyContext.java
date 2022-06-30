@@ -17,15 +17,40 @@ import static org.springframework.aop.interceptor.ExposeBeanNameAdvisors.getBean
  * @data: 2022/5/10 2:40
  * @version: 1.0
  */
-@Service
+//@Service
 public class UploadStrategyContext {
-    @Value("${upload.enable}")
+//    @Value("${upload.enable}")
     private String uploadModel;
 
-    @Autowired
+//    @Autowired
     private Map<String, UploadService> uploadServiceMap;
 
     public String executeUpload(MultipartFile file, String path) {
         return uploadServiceMap.get(getBeanName(uploadModel)).uploadFile(file, path);
+    }
+
+    public UploadStrategyContext() {
+
+    }
+
+    public UploadStrategyContext(String uploadModel, Map<String, UploadService> uploadServiceMap) {
+        this.uploadModel = uploadModel;
+        this.uploadServiceMap = uploadServiceMap;
+    }
+
+    public String getUploadModel() {
+        return uploadModel;
+    }
+
+    public void setUploadModel(String uploadModel) {
+        this.uploadModel = uploadModel;
+    }
+
+    public Map<String, UploadService> getUploadServiceMap() {
+        return uploadServiceMap;
+    }
+
+    public void setUploadServiceMap(Map<String, UploadService> uploadServiceMap) {
+        this.uploadServiceMap = uploadServiceMap;
     }
 }
