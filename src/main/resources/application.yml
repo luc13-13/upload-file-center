@@ -36,3 +36,11 @@ upload:
     url: rbm8degyo.hn-bkt.clouddn.com
     path:
 
+logging:
+  config: classpath:./logback-spring.xml
+  level:
+    root: info
+  file:
+    path: ./${spring.application.name}/logs
+
+
