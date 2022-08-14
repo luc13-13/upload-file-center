@@ -1,6 +1,7 @@
 package com.lc.upload.file.center.service.context;
 
 import com.lc.upload.file.center.service.UploadService;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,6 @@ import static org.springframework.aop.interceptor.ExposeBeanNameAdvisors.getBean
  * @data: 2022/5/10 2:40
  * @version: 1.0
  */
-//@Service
 public class UploadStrategyContext {
 //    @Value("${upload.enable}")
     private String uploadModel;

@@ -10,7 +10,7 @@
 	</parent>
 
     <groupId>com.lc</groupId>
-	<artifactId>upload.file.center</artifactId>
+	<artifactId>upload-file-center</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>upload-file-center</name>
 	<packaging>jar</packaging>
@@ -20,12 +20,12 @@
 	<distributionManagement>
 		<repository>
 			<id>local-mvn-repo</id>
-			<url>file:D:\java-2021-03\Maven\repository</url>
+			<url>/Users/luc13/Desktop/tools/maven/repository</url>
 		</repository>
-		<snapshotRepository>
-			<id>maven-snapshots</id>
-			<url>http://192.168.223.128:8081/repository/maven-snapshots/</url>
-		</snapshotRepository>
+<!--		<snapshotRepository>-->
+<!--			<id>maven-snapshots</id>-->
+<!--			<url>http://192.168.223.128:8081/repository/maven-snapshots/</url>-->
+<!--		</snapshotRepository>-->
 	</distributionManagement>
 
 	<dependencies>
