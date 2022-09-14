@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
 /**
  * @author: lucheng
@@ -47,10 +48,14 @@ public class FileUtils {
      * @param originalFilename
      * @return
      */
-    public static String getFileExt(String originalFilename) {
+    public static String getFileExt(String originalFilename) throws Exception{
         if (StringUtils.isBlank(originalFilename)) {
             return "";
         }
-        return originalFilename.substring(originalFilename.lastIndexOf("."));
+        String ext = originalFilename.substring(originalFilename.lastIndexOf("."));
+        if (!Arrays.asList(FILE_EXT.split(",")).contains(ext)) {
+            throw new Exception("unsupported file format");
+        }
+        return ext;
     }
 }

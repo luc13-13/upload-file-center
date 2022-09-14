@@ -28,13 +28,18 @@ spring:
 #上传设置。运行于虚拟机中，默认将文件上传至本地目录，local.url为虚拟机中nginx代理的path
 # 实际保存的路径为
 upload:
-  enable: local
-  local:
-    path: /app/dev/upload-file-center/articles/
-    url: http://192.168.223.128:88/articles/
-  qiniu:
-    url: rbm8degyo.hn-bkt.clouddn.com
-    path:
+  properties:
+    url: http://localhost:88/blog-center/images
+    path: /Users/luc13/Projects/release/blog-center/static_tmp/articles/images
+    max-size: 10
+  strategy:
+    upload-enable: local
+  #  local:
+#    path: /Users/luc13/Projects/release/blog-center/static_tmp/articles/images
+#    url: http://localhost:88/blog-center/images
+#  qiniu:
+#    url: rbm8degyo.hn-bkt.clouddn.com
+#    path:
 
 logging:
   config: classpath:./logback-spring.xml

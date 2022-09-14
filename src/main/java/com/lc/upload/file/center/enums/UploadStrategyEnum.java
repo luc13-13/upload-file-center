@@ -10,8 +10,8 @@ import lombok.Getter;
 @Getter
 public enum UploadStrategyEnum {
 
-    UPLOAD_LOCAL("local","localUploadServiceImpl"),
-    UPLOAD_QINIU("qiniu","qiniuUploadServiceImpl");
+    UPLOAD_LOCAL("local","localUploadService"),
+    UPLOAD_QINIU("qiniu","qiniuUploadService");
 
     UploadStrategyEnum(String strategy, String beanName) {
         this.strategy = strategy;

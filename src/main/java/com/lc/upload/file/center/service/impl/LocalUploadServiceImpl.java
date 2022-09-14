@@ -1,7 +1,9 @@
 package com.lc.upload.file.center.service.impl;
 
+import com.lc.upload.file.center.properties.UploadProperties;
 import com.lc.upload.file.center.service.AbstractUploadService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,10 @@ public class LocalUploadServiceImpl extends AbstractUploadService {
 
 //    @Value("${upload.local.url}")
     private String url;
+
+    public LocalUploadServiceImpl(UploadProperties uploadProperties) {
+        super(uploadProperties);
+    }
 
     @Override
     public boolean exist(String filePath) {

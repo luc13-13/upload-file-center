@@ -1,5 +1,6 @@
 package com.lc.upload.file.center.service;
 
+import com.lc.upload.file.center.properties.UploadProperties;
 import com.lc.upload.file.center.service.UploadService;
 import com.lc.upload.file.center.utils.FileUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +17,11 @@ import java.security.InvalidParameterException;
 @Slf4j
 public abstract class AbstractUploadService implements UploadService{
 
+    protected UploadProperties uploadProperties;
+
+    public AbstractUploadService(UploadProperties uploadProperties) {
+        this.uploadProperties = uploadProperties;
+    }
     /**
      * 默认file为md文件
      * @param file
@@ -26,7 +32,7 @@ public abstract class AbstractUploadService implements UploadService{
     public String uploadFile(MultipartFile file, String path) {
         try {
             // 检查文件大小
-            if(FileUtils.MAX_SIZE < (file.getSize()/1024)) {
+            if(uploadProperties.maxSize < (file.getSize()/1024)) {
                 int maxSize = FileUtils.MAX_SIZE/1024;
                 throw new InvalidParameterException("文件大小不能超过"+ maxSize + "Mb");
             }

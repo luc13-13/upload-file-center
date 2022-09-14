@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @data: 2021/11/27 17:17
  * @version: 1.0
  */
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+//@SpringBootApplication(exclude={DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 //@MapperScan("mapper/*.xml")
 public class Bootstrap {
     public static void main(String[] args) {

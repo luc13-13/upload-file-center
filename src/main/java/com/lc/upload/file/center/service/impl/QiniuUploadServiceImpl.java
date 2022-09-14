@@ -1,5 +1,6 @@
 package com.lc.upload.file.center.service.impl;
 
+import com.lc.upload.file.center.properties.UploadProperties;
 import com.lc.upload.file.center.service.AbstractUploadService;
 
 import java.io.IOException;
@@ -13,6 +14,13 @@ import java.io.InputStream;
 public class QiniuUploadServiceImpl extends AbstractUploadService {
     private String qiniuUrl;
     private String qiniuPath;
+
+    public QiniuUploadServiceImpl(UploadProperties uploadProperties) {
+        super(uploadProperties);
+        this.qiniuPath = uploadProperties.path;
+        this.qiniuUrl = uploadProperties.url;
+    }
+
     @Override
     public boolean exist(String filePath) {
         return false;

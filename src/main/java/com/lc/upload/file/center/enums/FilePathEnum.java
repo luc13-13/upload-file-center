@@ -10,8 +10,8 @@ import lombok.Getter;
  */
 //@Getter
 public enum FilePathEnum {
-    ARTICLE_IMG("images/","文章图片目录"),
-    ARTICLE_MD("md/","文章保存路径，同跳转链接");
+    ARTICLE_IMG("/article/images/","文章图片目录"),
+    ARTICLE_MD("/article/md/","文章保存路径，同跳转链接");
 
     FilePathEnum(String path, String desc) {
         this.path = path;
