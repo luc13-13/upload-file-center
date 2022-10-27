@@ -1,7 +1,7 @@
 package com.lc.upload.file.center.utils;
 
 import com.qiniu.util.Hex;
-import io.micrometer.core.instrument.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.io.InputStream;
